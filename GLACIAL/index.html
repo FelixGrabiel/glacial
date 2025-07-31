@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLACIAL | Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="/paginas/agua.html">Agua</a></li>
+            <li><a href="/paginas/hielo.html">Hielo</a></li>
+        </ul>
+        <img src="imagenes/logo.png" alt="Logo GLACIAL">
+    </nav>
+
+    <main class="contenido">
+        <h1>Bienvenido al Portal GLACIAL</h1>
+        <div class="botones-inicio">
+            <a href="/paginas/agua.html" class="btn-principal">Producción de Agua</a>
+            <a href="/paginas/hielo.html" class="btn-principal">Producción de Hielo</a>
+        </div>
+    </main>
+
+    <script>
+  const datos = JSON.parse(localStorage.getItem("usuario"));
+  const contenido = document.querySelector(".contenido");
+
+  if (!datos) {
+    window.location.href = "login.html";
+  } else {
+    contenido.innerHTML = `
+      <h1>Bienvenido, ${datos.usuario}</h1>
+      <p>Rol: <strong>${datos.rol}</strong></p>
+    `;
+
+    if (["Supervisor Producción", "Líder de Línea Agua", "Administrador", "Jefe de Operaciones", "Jefe de Mantenimiento"].includes(datos.rol)) {
+      contenido.innerHTML += `
+        <div class="botones-inicio">
+          <a href="/paginas/agua.html" class="btn-principal">Producción de Agua</a>
+        </div>
+      `;
+    }
+
+    if (["Supervisor Producción", "Administrador", "Jefe de Operaciones", "Líder de Línea Hielo", "Jefe de Mantenimiento"].includes(datos.rol)) {
+      contenido.innerHTML += `
+        <div class="botones-inicio">
+          <a href="/paginas/hielo.html" class="btn-principal">Producción de Hielo</a>
+        </div>
+      `;
+    }
+
+    contenido.innerHTML += `
+      <div class="botones-inicio">
+        <a href="/paginas/reportes.html" class="btn-principal">Ver Reportes</a>
+        <button onclick="cerrarSesion()" class="btn-principal">Cerrar sesión</button>
+      </div>
+    `;
+  }
+
+  function cerrarSesion() {
+    localStorage.removeItem("usuario");
+    window.location.href = "login.html";
+  }
+    </script>
+    <footer>
+        <p>&copy; 2025 GLACIAL. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
