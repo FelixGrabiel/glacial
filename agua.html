@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GLACIAL | Producción de Agua</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="icon" href="https://glacial.pe/wp-content/uploads/2018/01/favicon-glacial.png" />
+</head>
+<body>
+  <script>
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+    if (!usuario || !["Supervisor Producción", "Líder de Línea Agua", "Administrador", "Jefe de Operaciones"].includes(usuario.rol)) {
+      alert("Acceso no autorizado");
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <nav>
+    <ul>
+      <li><a href="/index.html">Inicio</a></li>
+      <li><a href="/paginas/agua.html">Agua</a></li>
+      <li><a href="/paginas/hielo.html">Hielo</a></li>
+    </ul>
+    <img src="imagenes/logo.png" alt="Logo GLACIAL">
+  </nav>
+
+  <main class="contenido">
+    <h1>Formulario de Producción de Agua</h1>
+    <form id="form-produccion-agua" class="formulario-produccion">
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required>
+
+      <label for="turno">Turno:</label>
+      <select id="turno" name="turno" required>
+        <option value="">Seleccione</option>
+        <option value="mañana">Mañana</option>
+        <option value="noche">Noche</option>
+      </select>
+
+      <label for="linea">Línea:</label>
+      <select id="linea" name="linea" required>
+        <option value="">Seleccione</option>
+        <option value="PET">PET</option>
+        <option value="BIDONES">Bidones</option>
+        <option value="CAJAS">Cajas</option>
+      </select>
+
+      <label for="produccion_pet">Producción PET (litros):</label>
+      <input type="number" id="produccion_pet" name="produccion_pet" min="0">
+
+      <label for="marca_pet">Marca:</label>
+      <select id="marca_pet" name="marca_pet">
+        <option value="">Seleccione marca</option>
+        <option value="BELLS">BELLS</option>
+        <option value="SCALA">SCALA</option>
+        <option value="GLACIAL">GLACIAL</option>
+        <option value="ARO">ARO</option>
+        <option value="SAN JORGE">SAN JORGE</option>
+        <option value="YAQUA FARMACIAS">YAQUA FARMACIAS</option>
+        <option value="CUISINE">CUISINE</option>
+      </select>
+
+      <label for="bidon_7">Bidones 7L (unidades):</label>
+      <input type="number" id="bidon_7" name="bidon_7" min="0">
+
+      <label for="marca_bidon7">Marca:</label>
+      <select id="marca_bidon7" name="marca_bidon7">
+        <option value="">Seleccione marca</option>
+        <option value="BELLS">BELLS</option>
+        <option value="SCALA">SCALA</option>
+        <option value="GLACIAL">GLACIAL</option>
+        <option value="ARO">ARO</option>
+        <option value="FONTLIFE">FONTLIFE</option>
+        <option value="MERKAT">MERKAT</option>
+        <option value="CUISINE">CUISINE</option>
+      </select>
+
+      <label for="bidon_20">Bidones 20L (unidades):</label>
+      <input type="number" id="bidon_20" name="bidon_20" min="0">
+
+      <label for="marca_bidon20">Marca:</label>
+      <select id="marca_bidon20" name="marca_bidon20">
+        <option value="">Seleccione marca</option>
+        <option value="GLACIAL">GLACIAL</option>
+      </select>
+
+      <label for="caja_20">Cajas 20L (unidades):</label>
+      <input type="number" id="caja_20" name="caja_20" min="0">
+
+      <label for="marca_caja20">Marca:</label>
+      <select id="marca_caja20" name="marca_caja20">
+        <option value="">Seleccione marca</option>
+        <option value="BELLS">BELLS</option>
+        <option value="SCALA">SCALA</option>
+        <option value="GLACIAL">GLACIAL</option>
+        <option value="ARO">ARO</option>
+        <option value="MERKAT">MERKAT</option>
+        <option value="SAN JORGE">SAN JORGE</option>
+        <option value="CUISINE">CUISINE</option>
+      </select>
+
+      <label for="responsable">Responsable:</label>
+      <input type="text" id="responsable" name="responsable" required>
+
+      <button type="submit">Enviar</button>
+    </form>
+    <p id="mensaje"></p>
+  </main>
+
+  <script src="/js/agua.js"></script>
+</body>
+</html>
