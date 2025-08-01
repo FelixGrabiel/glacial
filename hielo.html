@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GLACIAL | Producción de Hielo</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="/styles.css" />
   <link rel="icon" href="https://glacial.pe/wp-content/uploads/2018/01/favicon-glacial.png" />
 </head>
 <body>
@@ -28,78 +29,64 @@
   <main class="contenido">
     <h1>Formulario de Producción de Hielo</h1>
     <form id="form-produccion-hielo" class="formulario-produccion">
-  <label for="fecha">Fecha:</label>
-  <input type="date" id="fecha" name="fecha" required>
-
-  <label for="turno">Turno:</label>
-  <select id="turno" name="turno" required>
-    <option value="">Seleccione</option>
-    <option value="mañana">Mañana</option>
-    <option value="tarde">Tarde</option>
-    <option value="noche">Noche</option>
-  </select>
-
-  <label for="linea">Línea de Hielo:</label>
-  <select id="linea" name="linea" required>
-    <option value="">Seleccione</option>
-    <option value="1.5kg">1.5 KG</option>
-    <option value="3kg">3 KG</option>
-    <option value="5kg">5 KG</option>
-  </select>
-
-  <label for="marca_hielo">Marca:</label>
-  <select id="marca_hielo" name="marca_hielo" required>
-    <option value="">Seleccione marca</option>
-    <option value="BELLS">BELLS</option>
-    <option value="SCALA 1.5">SCALA 1.5</option>
-    <option value="GLACIAL 1.5">GLACIAL 1.5</option>
-    <option value="GLACIAL 3KG">GLACIAL 3KG</option>
-    <option value="LISTO 1.5">LISTO 1.5</option>
-    <option value="LISTO 3KG">LISTO 3KG</option>
-    <option value="CUISINE">CUISINE</option>
-    <option value="TOTTUS">TOTTUS</option>
-    <option value="ARO 5KG">ARO 5KG</option>
-    <option value="CERTIFICADO">CERTIFICADO</option>
-    <option value="AUSTRAL 1.5">AUSTRAL 1.5</option>
-  </select>
-
-  <label for="maquina">Máquina:</label>
-  <select id="maquina" name="maquina" required>
-    <option value="">Seleccione</option>
-    <option value="M1">M1</option>
-    <option value="M2">M2</option>
-    <option value="M3">M3</option>
-    <option value="M4">M4</option>
-    <option value="M5">M5</option>
-  </select>
-
-  <label for="tiempo">Tiempo (ciclo):</label>
-  <input type="number" id="tiempo" name="tiempo" min="0" step="0.01" required>
-
-  <label for="paletas">N° de Bolsas por la maquina:</label>
-  <input type="number" id="paletas" name="paletas" min="0" required>
-
-  <label for="lote">Lote:</label>
-  <input type="text" id="lote" name="lote" required>
-
-  <label for="vencimiento">Fecha de vencimiento:</label>
-  <input type="date" id="vencimiento" name="vencimiento" required>
-
-  <label for="peso">Peso Total (kg):</label>
-  <input type="number" id="peso" name="peso" min="0" required>
-
-  <label for="unidades">Cantidad de bolsas:</label>
-  <input type="number" id="unidades" name="unidades" min="0" required>
-
-  <label for="responsable">Responsable:</label>
-  <input type="text" id="responsable" name="responsable" required>
-
-  <button type="submit">Enviar</button>
-</form>
-
+      <label for="fecha">Fecha:</label>
+      <input type="date" id="fecha" name="fecha" required>
+      <label for="turno">Turno:</label>
+      <select id="turno" name="turno" required>
+        <option value="">Seleccione</option>
+        <option value="mañana">Mañana</option>
+        <option value="tarde">Tarde</option>
+        <option value="noche">Noche</option>
+      </select>
+      <label for="linea">Línea de Hielo:</label>
+      <select id="linea" name="linea" required>
+        <option value="">Seleccione</option>
+        <option value="1.5kg">1.5 KG</option>
+        <option value="3kg">3 KG</option>
+        <option value="5kg">5 KG</option>
+      </select>
+      <label for="marca_hielo">Marca:</label>
+      <select id="marca_hielo" name="marca_hielo" required>
+        <option value="">Seleccione marca</option>
+        <option value="BELLS">BELLS</option>
+        <option value="SCALA 1.5">SCALA 1.5</option>
+        <option value="GLACIAL 1.5">GLACIAL 1.5</option>
+        <option value="GLACIAL 3KG">GLACIAL 3KG</option>
+        <option value="LISTO 1.5">LISTO 1.5</option>
+        <option value="LISTO 3KG">LISTO 3KG</option>
+        <option value="CUISINE">CUISINE</option>
+        <option value="TOTTUS">TOTTUS</option>
+        <option value="ARO 5KG">ARO 5KG</option>
+        <option value="CERTIFICADO">CERTIFICADO</option>
+        <option value="AUSTRAL 1.5">AUSTRAL 1.5</option>
+      </select>
+      <label for="maquina">Máquina:</label>
+      <select id="maquina" name="maquina" required>
+        <option value="">Seleccione</option>
+        <option value="M1">M1</option>
+        <option value="M2">M2</option>
+        <option value="M3">M3</option>
+        <option value="M4">M4</option>
+        <option value="M5">M5</option>
+      </select>
+      <label for="tiempo">Tiempo (ciclo):</label>
+      <input type="number" id="tiempo" name="tiempo" min="0" step="0.01" required>
+      <label for="paletas">N° de Bolsas por la maquina:</label>
+      <input type="number" id="paletas" name="paletas" min="0" required>
+      <label for="lote">Lote:</label>
+      <input type="text" id="lote" name="lote" required>
+      <label for="vencimiento">Fecha de vencimiento:</label>
+      <input type="date" id="vencimiento" name="vencimiento" required>
+      <label for="peso">Peso Total (kg):</label>
+      <input type="number" id="peso" name="peso" min="0" required>
+      <label for="unidades">Cantidad de bolsas:</label>
+      <input type="number" id="unidades" name="unidades" min="0" required>
+      <label for="responsable">Responsable:</label>
+      <input type="text" id="responsable" name="responsable" required>
+      <button type="submit">Enviar</button>
+    </form>
     <p id="mensaje"></p>
   </main>
-
   <script src="/js/hielo.js"></script>
 </body>
 </html>
