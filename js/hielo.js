@@ -1,3 +1,4 @@
+
 document.getElementById("form-produccion-hielo").addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -20,6 +21,6 @@ document.getElementById("form-produccion-hielo").addEventListener("submit", func
   registros.push(datos);
   localStorage.setItem("produccion_hielo", JSON.stringify(registros));
 
-  alert("✅ Registro de producción de hielo guardado exitosamente.");
+  alert("Registro de producción de hielo guardado exitosamente ✅");
   this.reset();
 });
